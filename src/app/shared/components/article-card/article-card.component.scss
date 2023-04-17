@@ -1,0 +1,75 @@
+@import "../../../../assets/styles/variables";
+.article-card{
+  width:291px;
+  position: relative;
+  border-radius: 5px;
+  .article-category{
+    position: absolute;
+    top:10px;
+    right:10px;
+    padding:10px 18px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    text-align: center;
+    color: $blue-text-color;
+  }
+  .article-image{
+    width: 291px;
+    height: 291px;
+    margin-bottom: 15px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+  }
+  .article-content{
+    height: 291px;
+    margin-bottom: 20px;
+    .article-card-title{
+      font-family: 'Montserrat',sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 130%;
+      color: $blue-text-color;
+      margin-bottom: 20px;
+    }
+    .article-card-text{
+      font-family: 'Montserrat',sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: $base-text-color;
+    }
+
+  }
+  .article-card-link a{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration-line: underline;
+    color: $blue-text-color;
+  }
+
+}
+@media screen and (max-width: 1439px){
+  .article-card{
+    width:273px;
+    .article-image{
+      width: 273px;
+      height: 273px;
+    }
+
+  }
+}
+@media screen and (max-width: 1199px){
+  .article-card{
+    width:291px;
+    .article-image{
+      width: 291px;
+      height: 291px;
+    }
+
+  }
+}

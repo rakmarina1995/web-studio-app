@@ -1,0 +1,84 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+.detail-comment-item {
+  margin-top: 40px;
+
+  .detail-comment-item-head {
+    display: flex;
+    margin-bottom: 15px;
+
+    .detail-comment-item-image {
+      display: flex;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      border: 2px solid $blue-text-color;
+      background: #B9D5FD;
+    }
+
+    .detail-comment-item-personal {
+      margin-left: 26px;
+
+      .detail-comment-item-name {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: $blue-text-color;
+        margin-bottom: 10px;
+      }
+
+      .detail-comment-item-date {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #BEBEBE;
+      }
+    }
+  }
+
+  .detail-comment-item-text {
+    max-width: 854px;
+    font-size: 14px;
+    line-height: 140%;
+    color: $base-text-color;
+    margin-bottom: 39px;
+  }
+
+  .detail-comment-item-actions {
+    display: flex;
+    align-items: center;
+
+    .comment-icon {
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: $base-text-color;
+        margin-right: 5px;
+      }
+
+      &:hover {
+        svg path {
+          stroke: $blue-text-color;
+        }
+
+      }
+
+      &.active {
+        svg path {
+          stroke: $blue-text-color;
+        }
+
+        span {
+          color: $blue-text-color;
+        }
+      }
+    }
+  }
+}

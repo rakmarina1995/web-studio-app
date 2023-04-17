@@ -1,0 +1,62 @@
+<div class="popup" [formGroup]="popupForm" *ngIf="!formStatus">
+  <div class="popup-close" (click)="closePopup()">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="1.93562" y1="2.64999" x2="13.9564" y2="14.6708" stroke="#BEBEBE" stroke-linecap="round"/>
+      <line x1="13.9236" y1="2.62978" x2="1.90277" y2="14.6506" stroke="#BEBEBE" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="popup-title">{{serviceValue ? 'Заявка на услугу' : 'Закажите бесплатную консультацию!'}}</div>
+  <div class="popup-inputs">
+    <div class="popup-input" *ngIf="serviceValue" >
+      <mat-select  class="input" formControlName="service" [ngStyle]="{'border-color': popupForm.get('service')?.invalid
+                &&  (popupForm.get('service')?.touched || popupForm.get('service')?.dirty) ? 'service':''}">
+        <mat-option class="option" *ngFor="let service of services" [value]="service.title" (click)="setService(service.title)">{{service.title}}</mat-option>
+      </mat-select>
+    </div>
+    <div class="popup-input">
+      <input type="text" placeholder="Ваше имя" class="input" formControlName="name"
+             [ngStyle]="{'border-color': popupForm.get('name')?.invalid &&
+              (popupForm.get('name')?.touched || popupForm.get('name')?.dirty) ? 'red':''}">
+    </div>
+    <div class="auth-error" *ngIf="popupForm.get('name')?.invalid && (popupForm.get('name')?.touched || popupForm.get('name')?.dirty)">
+      <div  *ngIf="popupForm.get('name')?.errors?.['required']">
+        Введите имя
+      </div>
+      <div  *ngIf="popupForm.get('name')?.errors?.['pattern']">
+        Имя может содержать только русские буквы и пробелы. Каждое слово должно быть с большой буквы.
+      </div>
+    </div>
+    <div class="popup-input">
+      <input type="text" placeholder="Ваш номер телефона" phoneNumber class="input" formControlName="phone"
+             [ngStyle]="{'border-color': popupForm.get('phone')?.invalid &&
+              (popupForm.get('phone')?.touched || popupForm.get('phone')?.dirty) ? 'red':''}">
+    </div>
+    <div class="auth-error" *ngIf="popupForm.get('phone')?.invalid && (popupForm.get('phone')?.touched || popupForm.get('phone')?.dirty)">
+      <div  *ngIf="popupForm.get('phone')?.errors?.['required']">
+        Введите телефон
+      </div>
+      <div  *ngIf="popupForm.get('phone')?.errors?.['pattern']">
+       Некорректный номер
+      </div>
+    </div>
+  </div>
+  <div class="popup-button">
+    <button class="button" [disabled]="popupForm.invalid"
+            (click)="createOrder()">{{serviceValue ? 'Оставить заявку' : 'Заказать консультацию'}}</button>
+  </div>
+  <div *ngIf="error" class="popup-error">произошла ошибка при отправке формы, попробуйте еще раз</div>
+</div>
+<div class="popup popup-success" *ngIf="formStatus">
+  <div class="popup-close" (click)="closePopup()">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="1.93562" y1="2.64999" x2="13.9564" y2="14.6708" stroke="#BEBEBE" stroke-linecap="round"/>
+      <line x1="13.9236" y1="2.62978" x2="1.90277" y2="14.6506" stroke="#BEBEBE" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="popup-title title-success">Спасибо за вашу заявку!</div>
+  <div class="popup-success-text">Мы свяжемся с вами при первой же возможности.</div>
+  <div class="popup-button-success">
+    <button class="button button-success" (click)="closePopup()">Окей</button>
+  </div>
+</div>
+

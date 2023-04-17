@@ -1,0 +1,87 @@
+@import "mixins";
+
+
+.popup {
+  padding: 95px 153px 94px 152px;
+  position: relative;
+
+  .popup-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  &.popup-success {
+    padding: 163px 142px;
+    position: relative;
+
+  }
+
+  .popup-title {
+    max-width: 406px;
+    @include head-lora-38;
+    margin-bottom: 20px;
+    text-align: center;
+
+    &.title-success {
+      max-width: 443px;
+    }
+  }
+
+  .popup-success-text {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: $base-text-color;
+    margin-bottom: 40px;
+  }
+
+  .popup-inputs {
+    .popup-input {
+      .input {
+        width: 422px;
+        height: 53px;
+        margin-bottom: 5px;
+      }
+
+    }
+    .auth-error{
+      width: 422px;
+      margin-bottom: 10px;
+      font-size: 10px;
+      color:red;
+    }
+
+  }
+
+  .popup-button {
+    margin-top: 15px;
+
+    button {
+      width: 422px;
+      height: 51px;
+    }
+  }
+  .popup-error{
+    text-align: center;
+    font-size: 12px;
+    max-width: 422px;
+    margin-top: 15px;
+    color: #f10606;
+  }
+
+  .popup-button-success {
+    display: flex;
+    justify-content: center;
+
+    &.button-success {
+      width: 73px;
+      height: 36px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+

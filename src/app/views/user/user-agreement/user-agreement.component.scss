@@ -1,0 +1,18 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.agreements {
+  padding-bottom: 60px;
+
+  .agreements-title {
+    @include head-lora-38;
+    text-transform: uppercase;
+  }
+
+  .agreements-subtitle {
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: $blue-text-color;
+  }
+}

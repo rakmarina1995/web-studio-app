@@ -1,0 +1,16 @@
+<div class="service-card" *ngIf="service">
+  <div class="service-card-image" style="background-image: url('assets/images/page/{{service.image}}')"></div>
+  <div class="service-card-title">{{service.title}}</div>
+  <div class="service-card-description">
+    {{service.description}}
+  </div>
+  <div class="service-card-info">
+    <div class="service-card-price">От {{service.price}}₽</div>
+    <div class="service-card-button">
+      <button class="button" (click)="createOrder()">Подробнее</button>
+    </div>
+  </div>
+</div>
+<ng-template #popup>
+  <popup  [serviceValue]="service.title"></popup>
+</ng-template>

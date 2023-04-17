@@ -1,0 +1,12 @@
+@import "../../../../assets/styles/variables";
+.blog-filter-item {
+  margin-bottom: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.active {
+    color: $base-text-color;
+  }
+}

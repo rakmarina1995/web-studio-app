@@ -1,0 +1,6 @@
+<div class="blog-filter-item" (click)="updateFilterParams(category.url)" *ngIf="category"
+     [class.active]="activeParams.categories.includes(category.url)">
+  <span>{{category.name}}</span>
+  <span>{{activeParams.categories.includes(category.url) ? '+' : '-'}}</span>
+</div>
+

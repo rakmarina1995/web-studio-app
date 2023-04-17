@@ -1,0 +1,116 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.button {
+  background: $blue-text-color;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:disabled {
+    background: rgba(112, 159, 220, 0.53);
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  background: #FFFFFF;
+  border: 2px solid $blue-text-color;
+  border-radius: 3px;
+  padding: 17px 20px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+
+  &::placeholder {
+    color: #A8ABA7;
+  }
+}
+
+.mat-mdc-menu-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.owl-dots {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+
+  .owl-dot {
+    span {
+      box-sizing: border-box;
+      border: 1px solid white;
+      background: transparent !important;
+    }
+
+    &.active {
+      span {
+        background: white !important;
+      }
+    }
+  }
+}
+
+
+
+.cdk-overlay-pane {
+  top: 216.5px !important;
+  left: 544.5px !important;
+}
+
+.mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after, .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: $blue-text-color;
+}
+
+.mat-mdc-select-value-text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: $base-text-color !important;
+  line-height: 19px !important;
+}
+
+.mdc-list-item--selected .mdc-list-item__primary-text, .mdc-list-item--activated .mdc-list-item__primary-text {
+  color: $blue-text-color;
+}
+
+.mat-mdc-select-arrow-wrapper {
+  display: none !important;
+}
+
+.mat-mdc-select {
+  line-height: var(--mdc-typography-body1-line-height, 19px);
+}
+
+@media screen and (max-width: 1439px){
+.container{
+  max-width: 1200px;
+  padding-left:15px;
+  padding-right: 15px;
+}
+
+}
+
+
